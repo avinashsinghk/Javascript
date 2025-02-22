@@ -1,0 +1,57 @@
+<input type="text" value="" onchange="calculate(this.value)">
+<script>
+    function calculate(value) {
+        let num =0;
+       
+           
+        for(let i =0 ;i<value.length;i++){
+            let s1 = romanValue(value.charAt(i))
+            let s2  = 0
+            if(i+1<value.length){
+                s2 = romanValue(value.charAt(i+1))
+            }
+            if(s1<s2){
+                num +=s2-s1 
+                i++;
+            }else{
+                num+= s1
+            }
+
+        }
+
+        console.log(num)
+    }
+    function romanValue(type) {
+
+        switch (type) {
+            case "I":
+                return 1;
+                break;
+            case "V":
+                return 5;
+                break;
+            case "X":
+                return 10;
+                break;
+            case "L":
+                return 50;
+                break;
+            case "C":
+                return 100;
+                break;
+            case "D":
+                return 500;
+                break;
+            case "M":
+                return 1000;
+                break;
+        
+
+
+        }
+
+
+
+    }
+
+</script>
